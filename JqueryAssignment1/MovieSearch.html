@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <title> Movie Search Using IMDB</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Search IMDB</h1>
+        <a href="http://www.omdbapi.com/?s=title">Search for imdb </a>
+        <input type=" text" id="movieTitle" class="form-control" placeholder="Enter Title  here " />
+        <button id="searchMovie" class="btn btn-primary btn-block">Search </button>
+        <h2>Results</h2>
+        <table class=" table table-striped" id="results">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Year</th>
+                    <th>ImdbID</th>
+                    <th>Poster</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>frozen</td>
+                    <td>2013</td>
+                    <td>f1234</td>
+                    <td><img src="image/img1.jpg" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/imdb.js"></script>
+</body>
+
+</html>
