@@ -1,0 +1,13 @@
+ul
+{
+    list-style-type: none;
+}
+
+#btnPrevCss{
+	margin-left: 700px;
+
+}
+input:required {
+    background:hsl(180, 50%, 90%);
+    border:1px solid #999;
+}
