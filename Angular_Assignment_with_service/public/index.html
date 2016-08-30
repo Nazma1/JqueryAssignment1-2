@@ -1,0 +1,104 @@
+<html>
+
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <!-- <link href="css/style.css" rel="stylesheet"> -->
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        </head>
+        <body ng-app="crudModule" ng-controller="crudController">
+        <div class="container">
+              <div class="col-xs-12">                  
+                        <h1>Search Details</h1>
+                        <a 
+                            href="http://www.omdbapi.com/?s=title">Search for Details 
+                        </a>
+                        
+                            <div class="form-group ">
+                                <input type=" text" id="textId" ng-model="txtSearch" class="form-control"             placeholder="Enter  employee id  here " />                            
+                                <button id="searchDetails" class="btn btn-default" ng-click="searchDetails()">
+                                Search</button>
+                        </div>
+                        
+                        <button id="loadAllDetails" ng-click="loadAllDetails()" class="btn btn-default">List All
+                        </button>
+                        <!-- Trigger the modal with a button -->
+                        <button class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-click="createDetails()">Create Member
+                        </button>
+                       <!--  <button data-target="#myModal" data-toggle='modal' ng-click="click()"></button> -->
+
+                        <div class="table-responsive">
+                                <table class=" table table-striped" id="results">
+                                    <thead>
+                                        <tr ng-repeat="order in data" ng-if="$first">
+                                            <th ng-repeat="(key,val) in order">{{key}}</th>
+                                           <!--  <th>Age</th>
+                                            <th>Name</th>
+                                            <th>Gender</th>
+                                            <th>Company</th>
+                                            <th>Email</th>-->
+                                            <th>Edit</th>
+                                            <th>Delete</th> 
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="order in data ">
+                                            <td  ng-repeat="(key,val) in order">{{val}}</td>
+                                           <!--  <td>{{order.age}}</td>
+                                            <td>{{order.name}}</td>
+                                            <td>{{order.gender}}</td>
+                                            <td>{{order.company}}</td>
+                                            <td>{{order.email}}</td> -->
+                                            <td><button type="button" id="btnEdit" ng-click="mdlEdit(order.id)" data-toggle="modal" data-target="#myModal"><span class="glyphicon btn btn-danger  glyphicon-edit"></span></button></td>
+                                            <td>
+                                            <button type="button" ng-model="mdlRemove" id="btnRemove"><span  class="glyphicon  btn btn-danger glyphicon-trash" ng-click="RemoveDetails(order.id)"></span></button></td>
+
+                                         
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                                </div>
+                                
+                        <div class="modal fade" id="myModal">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button class="close" data-dismiss="modal">&times;
+                                        </button>
+                                        <h4 class="modal-title">Register Your Details</h4>
+                                    </div>
+                                    <!-- delted our  code here end modal-header-->
+                                    <dr-custom></dr-custom>
+                                   
+                                </div>                         
+                        </div>
+                    </div>
+                    </div>
+                    <div class="container row" id="PreNexDiv">
+                        <nav class="pull-right">
+                            <button type="button" id="btnPrev" class="btn btn-default btn-sm">
+                                <span class="glyphicon glyphicon-chevron-left"></span> Prev
+                            </button>
+                            <button type="button" id="btnNext" class="btn btn-default btn-sm">
+                                <span class="glyphicon glyphicon-chevron-right"></span> Next
+                            </button>
+                        </nav>
+                        </div>
+
+                        <script
+                             src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+                                
+                        </script>
+                        <script 
+                            src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+                            
+                        </script>
+                        <script src="js/angular.min.js"></script>
+                         <script src="js/module.js"></script>
+                         <script src="js/service.js"></script>
+
+        </body>
+
+</html>
